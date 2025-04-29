@@ -1,14 +1,26 @@
 package org.example.model;
 
+import org.example.model.enums.LampType;
+
 public class Lamp {
+    private LampType style;
     private boolean battery;
     private int globRating;
-    private LampType style;
 
-    public Lamp(boolean battery, int globRating, LampType style) {
+    // Constructor
+    public Lamp(LampType style, boolean battery, int globRating) {
+        this.style = style;
         this.battery = battery;
         this.globRating = globRating;
-        this.style = style;
+    }
+
+    // Methods
+    public void turnOn() {
+        System.out.println("Lamp is being turned on.");
+    }
+
+    public LampType getStyle() {
+        return style;
     }
 
     public boolean isBattery() {
@@ -17,13 +29,5 @@ public class Lamp {
 
     public int getGlobRating() {
         return globRating;
-    }
-
-    public LampType getStyle() {
-        return style;
-    }
-
-    public void turnOn(){
-        System.out.println("Lamp is being turned on.");
     }
 }
